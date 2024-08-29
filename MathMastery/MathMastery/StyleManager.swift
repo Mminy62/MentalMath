@@ -29,17 +29,19 @@ struct BoldTextStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .bold()
-            .font(.system(size: 20))
+            .font(.system(size: 24))
     }
 }
 
 struct TextFieldUnderbarStyle: ViewModifier {
+    let lineColor: Color
+    
     func body(content: Content) -> some View {
         content
             .overlay(
                 Rectangle()
                     .frame(height: 2.5)
-                    .foregroundColor(.black),
+                    .foregroundColor(lineColor),
                 alignment: .bottom
             )
     }
@@ -54,7 +56,7 @@ extension View {
         self.modifier(BoldTextStyle())
     }
     
-    func textFieldUnderbarStyle() -> some View {
-        self.modifier(TextFieldUnderbarStyle())
+    func textFieldUnderbarStyle(lineColor: Color) -> some View {
+        self.modifier(TextFieldUnderbarStyle(lineColor: lineColor))
     }
 }

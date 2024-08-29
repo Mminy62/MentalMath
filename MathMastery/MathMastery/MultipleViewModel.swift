@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 
 class MultipleViewModel: ObservableObject {
     static let shared = MultipleViewModel()
     @Published var selectedNumber: Int = 1
     @Published var leftNumber: Int = 1
     @Published var rightNumber: Int = 1
-    @Published var answer: Int = 1
-    @Published var userAnswer: String = ""
+    @Published var answer: String = "1"
+    @Published var userAnswer: String = "" {
+        didSet {
+            checkAnswer()
+        }
+    }
+    @Published var textLineColor: Color = .black
     var endNumber: Int = 9
     
     
@@ -24,7 +30,14 @@ class MultipleViewModel: ObservableObject {
         endNumber = selectedNumber > 9 ?  selectedNumber : endNumber
         leftNumber = selectedNumber
         rightNumber = Int.random(in: 1...endNumber)
-        answer = leftNumber * rightNumber
+        answer = String(leftNumber * rightNumber)
     }
-
+    
+    private func checkAnswer() {
+        if userAnswer.isEmpty {
+            textLineColor = .black
+        } else {
+            textLineColor = answer != userAnswer ? .red : .green
+        }
+    }
 }

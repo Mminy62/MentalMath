@@ -20,7 +20,7 @@ struct CalculateView: View {
                     
                     TextField("정답칸", text: $viewModel.userAnswer, prompt: Text("Answer").foregroundStyle(Color.textField))
                         .boldTextStyle()
-                        .textFieldUnderbarStyle()
+                        .textFieldUnderbarStyle(lineColor: viewModel.textLineColor)
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
                         .focused($isFocused)
@@ -46,6 +46,7 @@ struct CalculateView: View {
         }
         .onDisappear {
             isFocused = false
+            viewModel.userAnswer = ""
         }
     }
 }
