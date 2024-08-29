@@ -23,12 +23,15 @@ struct CalculateView: View {
                 Text("Back")
             }
             .foregroundStyle(.black)
+            .bold()
         }
     }
     
     var body: some View {
-        VStack(spacing: 30) {
-            HStack(alignment: .center) {
+        ZStack {
+            Color(.white).ignoresSafeArea()
+            VStack(spacing: 30){
+                HStack(alignment: .center) {
                     Text("\(viewModel.leftNumber) X \(viewModel.rightNumber) = ")
                         .boldTextStyle()
                     
@@ -40,23 +43,26 @@ struct CalculateView: View {
                         .focused($isFocused)
                         .frame(width: 100)
                         .padding(.bottom, 5)
-            }
-            
-            HStack(alignment: .center, spacing: 50) {
-                Button(action: {
-                    viewModel.userAnswer = viewModel.answer
-                }, label: {
+                }
+                
+                HStack(alignment: .center, spacing: 20) {
+                    Button(action: {
+                        viewModel.userAnswer = viewModel.answer
+                    }, label: {
                         Text("Hint")
                             .commomButtonStyle(backgroundColor: Color.hintBackground)
                     })
+                    .frame(width: 100, height: 35)
                     
-                Button(action: {
-                    viewModel.settingNextProblem()
-                }, label: {
+                    Button(action: {
+                        viewModel.settingNextProblem()
+                    }, label: {
                         Text("Next")
                             .commomButtonStyle(backgroundColor: Color.nextBackground)
                     })
+                    .frame(width: 100, height: 35)
                 }
+            }
         }
         .navigationBarTitle("\(selectedNumber)th Problems", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
@@ -66,8 +72,10 @@ struct CalculateView: View {
             viewModel.settingNumbers()
         }
         .onDisappear {
-            isFocused = false
             viewModel.userAnswer = ""
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
     }
 }
