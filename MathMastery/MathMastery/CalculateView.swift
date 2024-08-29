@@ -9,9 +9,23 @@ import SwiftUI
 
 struct CalculateView: View {
     @ObservedObject var viewModel = MultipleViewModel.shared
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @FocusState var isFocused: Bool
     let selectedNumber: Int
 
+    var backButton : some View {
+        Button{
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left")
+                    .aspectRatio(contentMode: .fit)
+                Text("Back")
+            }
+            .foregroundStyle(.black)
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 30) {
             HStack(alignment: .center) {
@@ -25,6 +39,7 @@ struct CalculateView: View {
                         .keyboardType(.numberPad)
                         .focused($isFocused)
                         .frame(width: 100)
+                        .padding(.bottom, 5)
             }
             
             HStack(alignment: .center, spacing: 50) {
@@ -44,6 +59,8 @@ struct CalculateView: View {
                 }
         }
         .navigationBarTitle("\(selectedNumber)th Problems", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
         .onAppear {
             viewModel.selectedNumber = selectedNumber
             viewModel.settingNumbers()

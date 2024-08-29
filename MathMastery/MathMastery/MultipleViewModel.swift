@@ -43,7 +43,7 @@ class MultipleViewModel: ObservableObject {
         if userAnswer.isEmpty {
             textLineColor = .black
         } else {
-            textLineColor = answer != userAnswer ? .red : .green
+            textLineColor = answer != userAnswer ? .red : Color.hintBackground
         }
     }
 }
