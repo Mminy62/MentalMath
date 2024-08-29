@@ -28,12 +28,16 @@ struct CalculateView: View {
             }
             
             HStack(alignment: .center, spacing: 50) {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    viewModel.userAnswer = viewModel.answer
+                }, label: {
                         Text("Hint")
                             .commomButtonStyle(backgroundColor: Color.hintBackground)
                     })
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    viewModel.settingNextProblem()
+                }, label: {
                         Text("Next")
                             .commomButtonStyle(backgroundColor: Color.nextBackground)
                     })

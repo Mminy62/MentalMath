@@ -27,10 +27,16 @@ class MultipleViewModel: ObservableObject {
     }
     
     func settingNumbers() {
-        endNumber = selectedNumber > 9 ?  selectedNumber : endNumber
+        endNumber = selectedNumber > 9 ? selectedNumber : endNumber
         leftNumber = selectedNumber
         rightNumber = Int.random(in: 1...endNumber)
         answer = String(leftNumber * rightNumber)
+    }
+    
+    func settingNextProblem() {
+        rightNumber = Int.random(in: 1...endNumber)
+        answer = String(leftNumber * rightNumber)
+        userAnswer = ""
     }
     
     private func checkAnswer() {
