@@ -117,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D2F339442C7F916800B47570 /* Build configuration list for PBXProject "MathMastery" */;
+			buildConfigurationList = D2F339442C7F916800B47570 /* Build configuration list for PBXProject "MentalMath" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -351,7 +351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D2F339442C7F916800B47570 /* Build configuration list for PBXProject "MathMastery" */ = {
+		D2F339442C7F916800B47570 /* Build configuration list for PBXProject "MentalMath" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2F339552C7F916A00B47570 /* Debug */,

@@ -14,17 +14,15 @@ class MultipleViewModel: ObservableObject {
     @Published var leftNumber: Int = 1
     @Published var rightNumber: Int = 1
     @Published var answer: String = "1"
+    @Published var textLineColor: Color = .black
     @Published var userAnswer: String = "" {
         didSet {
             checkAnswer()
         }
     }
-    @Published var textLineColor: Color = .black
-    var endNumber: Int = 9
+    private var endNumber: Int = 9
     
-    
-    private init() { // 외부에서 새로운 인스턴스 생성을 막음
-    }
+    private init() {} // 외부에서 새로운 인스턴스 생성을 막음
     
     func settingNumbers() {
         endNumber = selectedNumber > 9 ? selectedNumber : endNumber
