@@ -20,7 +20,7 @@ struct NumberListView: View {
                     }
                 }
             }
-            .navigationTitle("Set the numbers")
+            .navigationTitle("Multiplication Table")
         }
     }
 }

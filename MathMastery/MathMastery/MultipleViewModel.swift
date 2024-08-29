@@ -9,18 +9,22 @@ import Foundation
 
 class MultipleViewModel: ObservableObject {
     static let shared = MultipleViewModel()
-    
     @Published var selectedNumber: Int = 1
+    @Published var leftNumber: Int = 1
+    @Published var rightNumber: Int = 1
+    @Published var answer: Int = 1
+    @Published var userAnswer: String = ""
+    var endNumber: Int = 9
     
-    private init() {} // 외부에서 새로운 인스턴스 생성을 막음
     
-    func settingEndNumber(_ number: Int) -> Int {
-        var endNumber: Int = 9
-        endNumber =  selectedNumber > 9 ?  number : endNumber
-        return endNumber
+    private init() { // 외부에서 새로운 인스턴스 생성을 막음
     }
     
-    func getRandomNumber(_ endNumber: Int) -> Int {
-        return Int.random(in: 1...endNumber)
+    func settingNumbers() {
+        endNumber = selectedNumber > 9 ?  selectedNumber : endNumber
+        leftNumber = selectedNumber
+        rightNumber = Int.random(in: 1...endNumber)
+        answer = leftNumber * rightNumber
     }
+
 }

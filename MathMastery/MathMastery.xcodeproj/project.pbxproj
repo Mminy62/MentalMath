@@ -14,6 +14,7 @@
 		D2F3395D2C7F928500B47570 /* NumberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3395C2C7F928500B47570 /* NumberListView.swift */; };
 		D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3395E2C7F94FA00B47570 /* CalculateView.swift */; };
 		D2F339612C7F993E00B47570 /* MultipleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339602C7F993E00B47570 /* MultipleViewModel.swift */; };
+		D2F339632C80693300B47570 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339622C80693300B47570 /* StyleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D2F3395C2C7F928500B47570 /* NumberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListView.swift; sourceTree = "<group>"; };
 		D2F3395E2C7F94FA00B47570 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
 		D2F339602C7F993E00B47570 /* MultipleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleViewModel.swift; sourceTree = "<group>"; };
+		D2F339622C80693300B47570 /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				D2F3395C2C7F928500B47570 /* NumberListView.swift */,
 				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
 				D2F339602C7F993E00B47570 /* MultipleViewModel.swift */,
+				D2F339622C80693300B47570 /* StyleManager.swift */,
 				D2F339502C7F916A00B47570 /* Assets.xcassets */,
 				D2F339522C7F916A00B47570 /* Preview Content */,
 			);
@@ -151,6 +154,7 @@
 				D2F3394F2C7F916800B47570 /* ContentView.swift in Sources */,
 				D2F3394D2C7F916800B47570 /* MathMasteryApp.swift in Sources */,
 				D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */,
+				D2F339632C80693300B47570 /* StyleManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,14 +9,43 @@ import SwiftUI
 
 struct CalculateView: View {
     @ObservedObject var viewModel = MultipleViewModel.shared
+    @FocusState var isFocused: Bool
     let selectedNumber: Int
 
     var body: some View {
-        VStack {
-            Text("Selected Number: \(viewModel.selectedNumber)")
+        VStack(spacing: 30) {
+            HStack(alignment: .center) {
+                    Text("\(viewModel.leftNumber) X \(viewModel.rightNumber) = ")
+                        .boldTextStyle()
+                    
+                    TextField("정답칸", text: $viewModel.userAnswer, prompt: Text("Answer").foregroundStyle(Color.textField))
+                        .boldTextStyle()
+                        .textFieldUnderbarStyle()
+                        .multilineTextAlignment(.center)
+                        .keyboardType(.numberPad)
+                        .focused($isFocused)
+                        .frame(width: 100)
+            }
+            
+            HStack(alignment: .center, spacing: 50) {
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Text("Hint")
+                            .commomButtonStyle(backgroundColor: Color.hintBackground)
+                    })
+                    
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Text("Next")
+                            .commomButtonStyle(backgroundColor: Color.nextBackground)
+                    })
+                }
         }
+        .navigationBarTitle("\(selectedNumber)th Problems", displayMode: .inline)
         .onAppear {
             viewModel.selectedNumber = selectedNumber
+            viewModel.settingNumbers()
+        }
+        .onDisappear {
+            isFocused = false
         }
     }
 }
