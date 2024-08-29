@@ -1,6 +1,6 @@
 //
 //  ViewExtension.swift
-//  MathMastery
+//  MentalMath
 //
 //  Created by 이민영 on 8/29/24.
 //
