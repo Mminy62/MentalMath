@@ -12,6 +12,8 @@
 		D2F339512C7F916A00B47570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339502C7F916A00B47570 /* Assets.xcassets */; };
 		D2F339542C7F916A00B47570 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339532C7F916A00B47570 /* Preview Assets.xcassets */; };
 		D2F3395D2C7F928500B47570 /* NumberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3395C2C7F928500B47570 /* NumberListView.swift */; };
+		D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3395E2C7F94FA00B47570 /* CalculateView.swift */; };
+		D2F339612C7F993E00B47570 /* MultipleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339602C7F993E00B47570 /* MultipleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		D2F339502C7F916A00B47570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2F339532C7F916A00B47570 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2F3395C2C7F928500B47570 /* NumberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListView.swift; sourceTree = "<group>"; };
+		D2F3395E2C7F94FA00B47570 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
+		D2F339602C7F993E00B47570 /* MultipleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				D2F3394C2C7F916800B47570 /* MathMasteryApp.swift */,
 				D2F3394E2C7F916800B47570 /* ContentView.swift */,
 				D2F3395C2C7F928500B47570 /* NumberListView.swift */,
+				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
+				D2F339602C7F993E00B47570 /* MultipleViewModel.swift */,
 				D2F339502C7F916A00B47570 /* Assets.xcassets */,
 				D2F339522C7F916A00B47570 /* Preview Content */,
 			);
@@ -141,8 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F3395D2C7F928500B47570 /* NumberListView.swift in Sources */,
+				D2F339612C7F993E00B47570 /* MultipleViewModel.swift in Sources */,
 				D2F3394F2C7F916800B47570 /* ContentView.swift in Sources */,
 				D2F3394D2C7F916800B47570 /* MathMasteryApp.swift in Sources */,
+				D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
