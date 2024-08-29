@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2F3394D2C7F916800B47570 /* MathMasteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394C2C7F916800B47570 /* MathMasteryApp.swift */; };
+		D2F3394D2C7F916800B47570 /* MentalMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394C2C7F916800B47570 /* MentalMath.swift */; };
 		D2F3394F2C7F916800B47570 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394E2C7F916800B47570 /* ContentView.swift */; };
 		D2F339512C7F916A00B47570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339502C7F916A00B47570 /* Assets.xcassets */; };
 		D2F339542C7F916A00B47570 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339532C7F916A00B47570 /* Preview Assets.xcassets */; };
@@ -19,8 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D2F339492C7F916800B47570 /* MathMastery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathMastery.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2F3394C2C7F916800B47570 /* MathMasteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMasteryApp.swift; sourceTree = "<group>"; };
+		D2F339492C7F916800B47570 /* MentalMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F3394C2C7F916800B47570 /* MentalMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalMath.swift; sourceTree = "<group>"; };
 		D2F3394E2C7F916800B47570 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2F339502C7F916A00B47570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2F339532C7F916A00B47570 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		D2F339402C7F916800B47570 = {
 			isa = PBXGroup;
 			children = (
-				D2F3394B2C7F916800B47570 /* MathMastery */,
+				D2F3394B2C7F916800B47570 /* MentalMath */,
 				D2F3394A2C7F916800B47570 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,15 +53,15 @@
 		D2F3394A2C7F916800B47570 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2F339492C7F916800B47570 /* MathMastery.app */,
+				D2F339492C7F916800B47570 /* MentalMath.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D2F3394B2C7F916800B47570 /* MathMastery */ = {
+		D2F3394B2C7F916800B47570 /* MentalMath */ = {
 			isa = PBXGroup;
 			children = (
-				D2F3394C2C7F916800B47570 /* MathMasteryApp.swift */,
+				D2F3394C2C7F916800B47570 /* MentalMath.swift */,
 				D2F3394E2C7F916800B47570 /* ContentView.swift */,
 				D2F3395C2C7F928500B47570 /* NumberListView.swift */,
 				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
@@ -71,7 +71,7 @@
 				D2F339502C7F916A00B47570 /* Assets.xcassets */,
 				D2F339522C7F916A00B47570 /* Preview Content */,
 			);
-			path = MathMastery;
+			path = MentalMath;
 			sourceTree = "<group>";
 		};
 		D2F339522C7F916A00B47570 /* Preview Content */ = {
@@ -85,9 +85,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D2F339482C7F916800B47570 /* MathMastery */ = {
+		D2F339482C7F916800B47570 /* MentalMath */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2F339572C7F916A00B47570 /* Build configuration list for PBXNativeTarget "MathMastery" */;
+			buildConfigurationList = D2F339572C7F916A00B47570 /* Build configuration list for PBXNativeTarget "MentalMath" */;
 			buildPhases = (
 				D2F339452C7F916800B47570 /* Sources */,
 				D2F339462C7F916800B47570 /* Frameworks */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = MathMastery;
+			name = MentalMath;
 			productName = MathMastery;
-			productReference = D2F339492C7F916800B47570 /* MathMastery.app */;
+			productReference = D2F339492C7F916800B47570 /* MentalMath.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2F339482C7F916800B47570 /* MathMastery */,
+				D2F339482C7F916800B47570 /* MentalMath */,
 			);
 		};
 /* End PBXProject section */
@@ -156,7 +156,7 @@
 				D2F339612C7F993E00B47570 /* MultipleViewModel.swift in Sources */,
 				D2F3394F2C7F916800B47570 /* ContentView.swift in Sources */,
 				D2F339652C808E1400B47570 /* ViewExtension.swift in Sources */,
-				D2F3394D2C7F916800B47570 /* MathMasteryApp.swift in Sources */,
+				D2F3394D2C7F916800B47570 /* MentalMath.swift in Sources */,
 				D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */,
 				D2F339632C80693300B47570 /* StyleManager.swift in Sources */,
 			);
@@ -292,10 +292,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MathMastery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MentalMath/Preview Content\"";
 				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -324,10 +325,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MathMastery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MentalMath/Preview Content\"";
 				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -360,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2F339572C7F916A00B47570 /* Build configuration list for PBXNativeTarget "MathMastery" */ = {
+		D2F339572C7F916A00B47570 /* Build configuration list for PBXNativeTarget "MentalMath" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2F339582C7F916A00B47570 /* Debug */,
