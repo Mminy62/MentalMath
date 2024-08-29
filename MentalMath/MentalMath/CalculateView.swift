@@ -35,7 +35,7 @@ struct CalculateView: View {
                     Text("\(viewModel.leftNumber) X \(viewModel.rightNumber) = ")
                         .boldTextStyle()
                     
-                    TextField("정답란", text: $viewModel.userAnswer, prompt: Text("Answer").foregroundStyle(Color.textField))
+                    TextField("정답란", text: $viewModel.userAnswer, prompt: Text("Answer").foregroundColor(Color.textField))
                         .boldTextStyle()
                         .textFieldUnderbarStyle(lineColor: viewModel.textLineColor)
                         .multilineTextAlignment(.center)
