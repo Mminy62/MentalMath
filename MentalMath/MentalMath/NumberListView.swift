@@ -25,7 +25,6 @@ struct NumberListView: View {
             .navigationTitle("Multiplication Table")
             .listStyle(PlainListStyle()) // 기본 스타일로 설정 (옵션)
             .background(Color.white) // 배경색 설정
-            .cornerRadius(10) // 테두리 모서리 둥글게
             .padding() // 여백 추가
         }
     }

@@ -8,29 +8,15 @@
 import SwiftUI
 
 struct CalculateView: View {
-    @ObservedObject var viewModel = MultipleViewModel.shared
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var viewModel = CalculateViewModel.shared
     @FocusState var isFocused: Bool
     let selectedNumber: Int
-
-    var backButton : some View {
-        Button{
-            self.presentationMode.wrappedValue.dismiss()
-        } label: {
-            HStack {
-                Image(systemName: "chevron.left")
-                    .aspectRatio(contentMode: .fit)
-                Text("Back")
-            }
-            .foregroundStyle(.black)
-            .bold()
-        }
-    }
+    
     
     var body: some View {
         ZStack {
             Color(.white).ignoresSafeArea()
-            VStack(spacing: 30){
+            VStack(alignment: .center, spacing: 30){
                 HStack(alignment: .center) {
                     Text("\(viewModel.leftNumber) X \(viewModel.rightNumber) = ")
                         .boldTextStyle()
@@ -41,33 +27,58 @@ struct CalculateView: View {
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
                         .focused($isFocused)
-                        .frame(width: 100)
                         .padding(.bottom, 5)
                 }
+                .padding(.leading, 100)
+                .padding(.trailing, 100)
                 
-                HStack(alignment: .center, spacing: 20) {
+                HStack(alignment: .center) {
                     Button(action: {
                         viewModel.userAnswer = viewModel.answer
                     }, label: {
                         Text("Hint")
                             .commomButtonStyle(backgroundColor: Color.hintBackground)
                     })
-                    .frame(width: 100, height: 35)
+                    .frame(height: 35)
+                    
+                    Spacer()
                     
                     Button(action: {
                         viewModel.settingNextProblem()
                     }, label: {
                         Text("Next")
                             .commomButtonStyle(backgroundColor: Color.nextBackground)
+                            .opacity(viewModel.onAutoMode ? 0 : 1)
                     })
-                    .frame(width: 100, height: 35)
+                    .frame(height: 35)
                 }
+                .padding(.leading, 100)
+                .padding(.trailing, 100)
             }
         }
-        .navigationBarTitle("\(selectedNumber)th Problems", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                BackButtonView()
+            }
+            ToolbarItem(placement: .principal) {
+                Text("\(selectedNumber)th Problems")
+                    .bold()
+                    .font(.system(size: 20))
+                
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Toggle(isOn: $viewModel.onAutoMode){
+                    Text("Auto")
+                        .bold()
+                }
+                .padding(.trailing, 15)
+                .tint(Color.nextBackground)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+            }
+        }
         .onAppear {
+            // viewModel 설정
             viewModel.selectedNumber = selectedNumber
             viewModel.settingNumbers()
         }

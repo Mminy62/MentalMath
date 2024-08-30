@@ -8,20 +8,27 @@
 import Foundation
 import SwiftUI
 
-class MultipleViewModel: ObservableObject {
-    static let shared = MultipleViewModel()
+class CalculateViewModel: ObservableObject {
+    static let shared = CalculateViewModel()
+    
+    @Published var textLineColor: Color = .black
+    @Published var onAutoMode = false
+    
     @Published var selectedNumber: Int = 1
     @Published var leftNumber: Int = 1
     @Published var rightNumber: Int = 1
+    @Published var isCorrect: Bool = false
     @Published var answer: String = "1"
-    @Published var textLineColor: Color = .black
     @Published var userAnswer: String = "" {
         didSet {
-            checkAnswer()
+            if oldValue != userAnswer {
+                checkAnswer()
+            }
         }
     }
-    private var endNumber: Int = 9
     
+    private var endNumber: Int = 9
+
     private init() {} // 외부에서 새로운 인스턴스 생성을 막음
     
     func settingNumbers() {
@@ -32,16 +39,31 @@ class MultipleViewModel: ObservableObject {
     }
     
     func settingNextProblem() {
+        userAnswer = ""
         rightNumber = Int.random(in: 1...endNumber)
         answer = String(leftNumber * rightNumber)
-        userAnswer = ""
     }
     
+    // textfield line color & isCorrect flag 담당
     private func checkAnswer() {
         if userAnswer.isEmpty {
             textLineColor = .black
+            isCorrect = false
         } else {
-            textLineColor = answer != userAnswer ? .red : Color.hintBackground
+            if answer == userAnswer {
+                isCorrect = true
+                textLineColor = Color.hintBackground
+            } else {
+                isCorrect = false
+                textLineColor = .red
+            }
+        }
+        
+        if onAutoMode && isCorrect {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.settingNextProblem()
+            }
         }
     }
 }
+
