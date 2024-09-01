@@ -32,6 +32,10 @@ class CalculateViewModel: ObservableObject {
     }
     
     private var endNumber: Int = 9
+    
+    // 상수 정리
+    private let defaultEndNumber: Int = 9
+    private let autoDelay: TimeInterval = 1.0
 
     private init() {} // 외부에서 새로운 인스턴스 생성을 막음
     
@@ -51,7 +55,7 @@ class CalculateViewModel: ObservableObject {
     // textfield line color & isCorrect flag 담당
     private func checkAnswer() {
         if userAnswer.isEmpty {
-            textLineColor = .black
+            textLineColor = .primary
             isCorrect = false
         } else {
             if answer == userAnswer {

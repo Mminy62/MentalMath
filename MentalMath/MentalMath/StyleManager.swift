@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 
 struct CommonButtonStyle: ViewModifier {
+    var textColor: Color
     var backgroundColor: Color
     
     func body(content: Content) -> some View {
         content
             .bold()
             .font(.system(size: 20))
-            .foregroundColor(.white)
+            .foregroundColor(textColor)
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 20.0)
@@ -48,8 +49,8 @@ struct TextFieldUnderbarStyle: ViewModifier {
 }
 
 extension View {
-    func commomButtonStyle(backgroundColor: Color) -> some View {
-        self.modifier(CommonButtonStyle(backgroundColor: backgroundColor))
+    func commomButtonStyle(textColor: Color, backgroundColor: Color) -> some View {
+        self.modifier(CommonButtonStyle(textColor: textColor, backgroundColor: backgroundColor))
     }
     
     func boldTextStyle() -> some View {

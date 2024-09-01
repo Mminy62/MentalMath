@@ -16,16 +16,18 @@ struct CalculateView: View {
     
     var body: some View {
         ZStack {
-            Color(.white).ignoresSafeArea()
+            Color(.systemBackground).ignoresSafeArea()
             VStack(alignment: .center, spacing: 30){
                 HStack(alignment: .center) {
                     Spacer()
                     Text("\(viewModel.leftNumber) X \(viewModel.rightNumber) = ")
                         .boldTextStyle()
+                        .foregroundStyle(.primary)
                     
                     TextField("정답란", text: $viewModel.userAnswer, prompt: Text("Answer").foregroundColor(Color.textField))
                         .boldTextStyle()
                         .textFieldUnderbarStyle(lineColor: viewModel.textLineColor)
+                        
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
                         .focused($isFocused)
@@ -40,7 +42,7 @@ struct CalculateView: View {
                         viewModel.userAnswer = viewModel.answer
                     }, label: {
                         Text("Hint")
-                            .commomButtonStyle(backgroundColor: Color.hintBackground)
+                            .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.hintBackground)
                     })
                     .frame(width: screenWidth/5, height: 35)
                     
@@ -48,7 +50,7 @@ struct CalculateView: View {
                         viewModel.settingNextProblem()
                     }, label: {
                         Text("Next")
-                            .commomButtonStyle(backgroundColor: Color.nextBackground)
+                            .commomButtonStyle(textColor: Color.nextButtonText ,backgroundColor: Color.nextBackground)
                             .opacity(viewModel.onAutoMode ? 0 : 1)
                     })
                     .frame(width: screenWidth/5, height: 35)
