@@ -12,7 +12,11 @@ class CalculateViewModel: ObservableObject {
     static let shared = CalculateViewModel()
     
     @Published var textLineColor: Color = .black
-    @Published var onAutoMode = false
+    @Published var onAutoMode = false {
+        didSet {
+            checkAnswer()
+        }
+    }
     
     @Published var selectedNumber: Int = 1
     @Published var leftNumber: Int = 1

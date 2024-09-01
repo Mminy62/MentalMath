@@ -56,8 +56,6 @@ struct CalculateView: View {
                 }
                 
             }
-//            .padding(.leading, 50)
-//            .padding(.trailing, 50)
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
