@@ -11,6 +11,7 @@ struct CalculateView: View {
     @ObservedObject var viewModel = CalculateViewModel.shared
     @FocusState var isFocused: Bool
     let selectedNumber: Int
+    let screenWidth = UIScreen.main.bounds.width
     
     
     var body: some View {
@@ -18,6 +19,7 @@ struct CalculateView: View {
             Color(.white).ignoresSafeArea()
             VStack(alignment: .center, spacing: 30){
                 HStack(alignment: .center) {
+                    Spacer()
                     Text("\(viewModel.leftNumber) X \(viewModel.rightNumber) = ")
                         .boldTextStyle()
                     
@@ -28,20 +30,19 @@ struct CalculateView: View {
                         .keyboardType(.numberPad)
                         .focused($isFocused)
                         .padding(.bottom, 5)
+                        .frame(maxWidth: 130)
+                    Spacer()
                 }
-                .padding(.leading, 100)
-                .padding(.trailing, 100)
                 
-                HStack(alignment: .center) {
+                HStack(alignment: .center, spacing: 60) {
+                    Spacer(minLength: 100)
                     Button(action: {
                         viewModel.userAnswer = viewModel.answer
                     }, label: {
                         Text("Hint")
                             .commomButtonStyle(backgroundColor: Color.hintBackground)
                     })
-                    .frame(height: 35)
-                    
-                    Spacer()
+                    .frame(width: screenWidth/5, height: 35)
                     
                     Button(action: {
                         viewModel.settingNextProblem()
@@ -50,11 +51,13 @@ struct CalculateView: View {
                             .commomButtonStyle(backgroundColor: Color.nextBackground)
                             .opacity(viewModel.onAutoMode ? 0 : 1)
                     })
-                    .frame(height: 35)
+                    .frame(width: screenWidth/5, height: 35)
+                    Spacer(minLength: 100)
                 }
-                .padding(.leading, 100)
-                .padding(.trailing, 100)
+                
             }
+//            .padding(.leading, 50)
+//            .padding(.trailing, 50)
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -92,5 +95,5 @@ struct CalculateView: View {
 }
 
 #Preview {
-    CalculateView(selectedNumber: 1)
+    CalculateView(selectedNumber: 14)
 }
