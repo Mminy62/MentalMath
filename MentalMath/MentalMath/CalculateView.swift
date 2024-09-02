@@ -13,10 +13,10 @@ struct CalculateView: View {
     let selectedNumber: Int
     let screenWidth = UIScreen.main.bounds.width
     
-    
+    @State private var onAuto: Bool = false // Create the state.
     var body: some View {
         ZStack {
-            Color(.systemBackground).ignoresSafeArea()
+            Color(.white).ignoresSafeArea()
             VStack(alignment: .center, spacing: 30){
                 HStack(alignment: .center) {
                     Spacer()
@@ -27,7 +27,7 @@ struct CalculateView: View {
                     TextField("정답란", text: $viewModel.userAnswer, prompt: Text("Answer").foregroundColor(Color.textField))
                         .boldTextStyle()
                         .textFieldUnderbarStyle(lineColor: viewModel.textLineColor)
-                        
+                    
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
                         .focused($isFocused)
@@ -60,28 +60,8 @@ struct CalculateView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                BackButtonView()
-            }
-            ToolbarItem(placement: .principal) {
-                Text("\(selectedNumber)th Problems")
-                    .bold()
-                    .font(.system(size: 20))
-                
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                Toggle(isOn: $viewModel.onAutoMode){
-                    Text("Auto")
-                        .bold()
-                }
-                .padding(.trailing, 15)
-                .tint(Color.nextBackground)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-            }
-        }
+        .toolbarStyle(title: "\(selectedNumber)th Problems", onAutoButton: true)
         .onAppear {
-            // viewModel 설정
             viewModel.selectedNumber = selectedNumber
             viewModel.settingNumbers()
         }
