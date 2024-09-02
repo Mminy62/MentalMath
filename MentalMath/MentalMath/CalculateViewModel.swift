@@ -33,8 +33,6 @@ class CalculateViewModel: ObservableObject {
     }
     
     private var endNumber: Int = 9
-    
-    // 상수 정리
     private let defaultEndNumber: Int = 9
     private let autoDelay: TimeInterval = 1.0
 

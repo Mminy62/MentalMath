@@ -12,7 +12,7 @@ struct MulTableView: View {
     private let endRange = 20
     
     var body: some View {
-        NavigationStack {
+        VStack {
             List {
                 ForEach(Array(startRange...endRange), id: \.self) { num in
                     NavigationLink(destination: CalculateView(selectedNumber: num)) {
@@ -22,11 +22,11 @@ struct MulTableView: View {
                     }
                 }
             }
-            .navigationTitle("Multiplication Table")
-            .listStyle(PlainListStyle()) // 기본 스타일로 설정 (옵션)
-            .background(Color.white) // 배경색 설정
-            .padding() // 여백 추가
+            .listStyle(PlainListStyle())
         }
+        .toolbarStyle(title: "Multiplication Table", onAutoButton: false)
+        .background(Color.white) // 배경색 설정
+        .padding(10)
     }
 }
 

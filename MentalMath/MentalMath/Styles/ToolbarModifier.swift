@@ -16,6 +16,7 @@ struct ToolbarStyle: ViewModifier {
     
     func body(content: Content) -> some View {
         content
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     BackButtonView()
@@ -27,14 +28,22 @@ struct ToolbarStyle: ViewModifier {
                     
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Toggle(isOn: $viewModel.onAutoMode, label: {
+                    Button(action: {
+                        viewModel.onAutoMode.toggle()
+                    }, label: {
                         Text("Auto")
                             .bold()
+                            .foregroundStyle(viewModel.onAutoMode ? Color.mainPurple : .white)
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundStyle(viewModel.onAutoMode ? .white : Color.mainPurple)
+                                    .frame(width: 60, height: 30)
+                            )
                     })
-                    .padding(.trailing, 15)
-                    .foregroundStyle(Color.mainPurple)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
                     .opacity(onAutoButton ? 1 : 0)
+                    .padding(.trailing, 15)
+                    
+                        
                 }
             }
     }

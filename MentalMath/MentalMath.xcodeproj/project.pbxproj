@@ -108,8 +108,8 @@
 		D2F3396D2C85515B00B47570 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				D2F339622C80693300B47570 /* ViewModifiers.swift */,
 				D2F339662C8163B800B47570 /* BackButtonView.swift */,
+				D2F339622C80693300B47570 /* ViewModifiers.swift */,
 				D2F339722C8563D900B47570 /* ToolbarModifier.swift */,
 			);
 			path = Styles;
