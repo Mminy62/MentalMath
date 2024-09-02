@@ -48,6 +48,25 @@ struct TextFieldUnderbarStyle: ViewModifier {
     }
 }
 
+struct MainButtonStyle: ViewModifier {
+    let height: CGFloat
+    let backgroundColor: Color
+    
+    func body(content: Content) -> some View {
+        content
+            .fontWeight(.heavy)
+            .font(.system(size: 70))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .frame(height: height)
+            .background {
+                RoundedRectangle(cornerRadius: 10.0)
+                    .foregroundStyle(backgroundColor)
+                    .shadow(radius: 5)
+            }
+    }
+}
+
 extension View {
     func commomButtonStyle(textColor: Color, backgroundColor: Color) -> some View {
         self.modifier(CommonButtonStyle(textColor: textColor, backgroundColor: backgroundColor))
@@ -59,5 +78,9 @@ extension View {
     
     func textFieldUnderbarStyle(lineColor: Color) -> some View {
         self.modifier(TextFieldUnderbarStyle(lineColor: lineColor))
+    }
+    
+    func mainButtonStyle(height: CGFloat, backgroundColor: Color) -> some View {
+        self.modifier(MainButtonStyle(height: height, backgroundColor: backgroundColor))
     }
 }
