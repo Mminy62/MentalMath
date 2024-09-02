@@ -42,7 +42,7 @@ struct CalculateView: View {
                         viewModel.userAnswer = viewModel.answer
                     }, label: {
                         Text("Hint")
-                            .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.hintBackground)
+                            .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.mainCyan)
                     })
                     .frame(width: screenWidth/5, height: 35)
                     
@@ -50,7 +50,7 @@ struct CalculateView: View {
                         viewModel.settingNextProblem()
                     }, label: {
                         Text("Next")
-                            .commomButtonStyle(textColor: Color.nextButtonText ,backgroundColor: Color.nextBackground)
+                            .commomButtonStyle(textColor: Color.nextButtonText ,backgroundColor: Color.mainPurple)
                             .opacity(viewModel.onAutoMode ? 0 : 1)
                     })
                     .frame(width: screenWidth/5, height: 35)

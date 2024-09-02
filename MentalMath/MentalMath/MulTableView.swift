@@ -1,5 +1,5 @@
 //
-//  NumberListView.swift
+//  MulTableView.swift
 //  MentalMath
 //
 //  Created by 이민영 on 8/29/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NumberListView: View {
+struct MulTableView: View {
     private let startRange = 2
     private let endRange = 20
     
@@ -31,5 +31,5 @@ struct NumberListView: View {
 }
 
 #Preview {
-    NumberListView()
+    MulTableView()
 }

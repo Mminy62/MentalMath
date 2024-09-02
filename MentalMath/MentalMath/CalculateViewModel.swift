@@ -21,6 +21,7 @@ class CalculateViewModel: ObservableObject {
     @Published var selectedNumber: Int = 1
     @Published var leftNumber: Int = 1
     @Published var rightNumber: Int = 1
+    @Published var op: String = "+"
     @Published var isCorrect: Bool = false
     @Published var answer: String = "1"
     @Published var userAnswer: String = "" {
@@ -42,14 +43,24 @@ class CalculateViewModel: ObservableObject {
     func settingNumbers() {
         endNumber = selectedNumber > 9 ? selectedNumber : endNumber
         leftNumber = selectedNumber
-        rightNumber = Int.random(in: 1...endNumber)
+        rightNumber = createNumber(oldValue: rightNumber)
         answer = String(leftNumber * rightNumber)
     }
     
     func settingNextProblem() {
         userAnswer = ""
-        rightNumber = Int.random(in: 1...endNumber)
+        rightNumber = createNumber(oldValue: rightNumber)
         answer = String(leftNumber * rightNumber)
+    }
+    
+    func createNumber(oldValue: Int) -> Int {
+        var newNumber = 0
+        
+        while true {
+            newNumber = Int.random(in: 1...endNumber)
+            if newNumber != oldValue { break }
+        }
+        return newNumber
     }
     
     // textfield line color & isCorrect flag 담당
@@ -60,7 +71,7 @@ class CalculateViewModel: ObservableObject {
         } else {
             if answer == userAnswer {
                 isCorrect = true
-                textLineColor = Color.hintBackground
+                textLineColor = Color.mainCyan
             } else {
                 isCorrect = false
                 textLineColor = .red

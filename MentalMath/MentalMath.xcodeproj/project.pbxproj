@@ -8,32 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		D2F3394D2C7F916800B47570 /* MentalMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394C2C7F916800B47570 /* MentalMath.swift */; };
-		D2F3394F2C7F916800B47570 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394E2C7F916800B47570 /* ContentView.swift */; };
+		D2F3394F2C7F916800B47570 /* MulMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394E2C7F916800B47570 /* MulMenuView.swift */; };
 		D2F339512C7F916A00B47570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339502C7F916A00B47570 /* Assets.xcassets */; };
 		D2F339542C7F916A00B47570 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339532C7F916A00B47570 /* Preview Assets.xcassets */; };
-		D2F3395D2C7F928500B47570 /* NumberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3395C2C7F928500B47570 /* NumberListView.swift */; };
+		D2F3395D2C7F928500B47570 /* MulTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3395C2C7F928500B47570 /* MulTableView.swift */; };
 		D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3395E2C7F94FA00B47570 /* CalculateView.swift */; };
 		D2F339612C7F993E00B47570 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339602C7F993E00B47570 /* CalculateViewModel.swift */; };
-		D2F339632C80693300B47570 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339622C80693300B47570 /* StyleManager.swift */; };
+		D2F339632C80693300B47570 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339622C80693300B47570 /* ViewModifiers.swift */; };
 		D2F339652C808E1400B47570 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339642C808E1400B47570 /* ViewExtension.swift */; };
 		D2F339672C8163B800B47570 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339662C8163B800B47570 /* BackButtonView.swift */; };
 		D2F3396A2C844FD200B47570 /* ControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339692C844FD200B47570 /* ControllerExtension.swift */; };
+		D2F3396F2C8553D100B47570 /* MulRandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3396E2C8553D100B47570 /* MulRandomView.swift */; };
+		D2F339712C85556600B47570 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339702C85556600B47570 /* MainView.swift */; };
+		D2F339732C8563D900B47570 /* ToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339722C8563D900B47570 /* ToolbarModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2F339492C7F916800B47570 /* MentalMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F3394C2C7F916800B47570 /* MentalMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalMath.swift; sourceTree = "<group>"; };
-		D2F3394E2C7F916800B47570 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D2F3394E2C7F916800B47570 /* MulMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulMenuView.swift; sourceTree = "<group>"; };
 		D2F339502C7F916A00B47570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2F339532C7F916A00B47570 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D2F3395C2C7F928500B47570 /* NumberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListView.swift; sourceTree = "<group>"; };
+		D2F3395C2C7F928500B47570 /* MulTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulTableView.swift; sourceTree = "<group>"; };
 		D2F3395E2C7F94FA00B47570 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
 		D2F339602C7F993E00B47570 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
-		D2F339622C80693300B47570 /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		D2F339622C80693300B47570 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		D2F339642C808E1400B47570 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		D2F339662C8163B800B47570 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		D2F339692C844FD200B47570 /* ControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerExtension.swift; sourceTree = "<group>"; };
 		D2F3396C2C84D8BE00B47570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D2F3396E2C8553D100B47570 /* MulRandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulRandomView.swift; sourceTree = "<group>"; };
+		D2F339702C85556600B47570 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D2F339722C8563D900B47570 /* ToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +74,13 @@
 			children = (
 				D2F3396C2C84D8BE00B47570 /* Info.plist */,
 				D2F3394C2C7F916800B47570 /* MentalMath.swift */,
-				D2F3394E2C7F916800B47570 /* ContentView.swift */,
-				D2F3395C2C7F928500B47570 /* NumberListView.swift */,
+				D2F339702C85556600B47570 /* MainView.swift */,
+				D2F3394E2C7F916800B47570 /* MulMenuView.swift */,
+				D2F3395C2C7F928500B47570 /* MulTableView.swift */,
 				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
 				D2F339602C7F993E00B47570 /* CalculateViewModel.swift */,
-				D2F339662C8163B800B47570 /* BackButtonView.swift */,
-				D2F339622C80693300B47570 /* StyleManager.swift */,
+				D2F3396E2C8553D100B47570 /* MulRandomView.swift */,
+				D2F3396D2C85515B00B47570 /* Styles */,
 				D2F3396B2C844FDE00B47570 /* Extensions */,
 				D2F339502C7F916A00B47570 /* Assets.xcassets */,
 				D2F339522C7F916A00B47570 /* Preview Content */,
@@ -96,6 +103,16 @@
 				D2F339692C844FD200B47570 /* ControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D2F3396D2C85515B00B47570 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D2F339622C80693300B47570 /* ViewModifiers.swift */,
+				D2F339662C8163B800B47570 /* BackButtonView.swift */,
+				D2F339722C8563D900B47570 /* ToolbarModifier.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,15 +185,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F3395D2C7F928500B47570 /* NumberListView.swift in Sources */,
+				D2F3395D2C7F928500B47570 /* MulTableView.swift in Sources */,
 				D2F339612C7F993E00B47570 /* CalculateViewModel.swift in Sources */,
-				D2F3394F2C7F916800B47570 /* ContentView.swift in Sources */,
+				D2F3394F2C7F916800B47570 /* MulMenuView.swift in Sources */,
+				D2F3396F2C8553D100B47570 /* MulRandomView.swift in Sources */,
 				D2F339672C8163B800B47570 /* BackButtonView.swift in Sources */,
 				D2F3396A2C844FD200B47570 /* ControllerExtension.swift in Sources */,
 				D2F339652C808E1400B47570 /* ViewExtension.swift in Sources */,
+				D2F339712C85556600B47570 /* MainView.swift in Sources */,
 				D2F3394D2C7F916800B47570 /* MentalMath.swift in Sources */,
 				D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */,
-				D2F339632C80693300B47570 /* StyleManager.swift in Sources */,
+				D2F339732C8563D900B47570 /* ToolbarModifier.swift in Sources */,
+				D2F339632C80693300B47570 /* ViewModifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
