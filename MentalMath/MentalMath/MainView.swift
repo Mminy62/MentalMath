@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var viewModel = CalculateViewModel.shared
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
-    
+//    @State private var operation: Operator = .plus
+
     var body: some View {
         NavigationStack {
             VStack(alignment: .center, spacing: 50) {
@@ -21,32 +23,38 @@ struct MainView: View {
                 
                 VStack(alignment: .center, spacing: 20) {
                     HStack(alignment: .center, spacing: 20) {
-                        NavigationLink {
-                            MulMenuView()
-                        } label: {
+                        NavigationLink(value: Operator.mul) {
                             Text("×")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightSkyBlue)
                         }
-                        NavigationLink {
-//                            MulMenuView()
-                        } label: {
+                        .navigationDestination(for: Operator.self) { textValue in
+                            MulMenuView()
+                                .onAppear {
+                                    viewModel.op = textValue
+                                }
+                        }
+                
+                        NavigationLink(value: Operator.add) {
                             Text("+")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightCyan)
+                        }
+                        .navigationDestination(for: Operator.self) { textValue in
                         }
                     }
                     
                     HStack(alignment: .center, spacing: 20) {
-                        NavigationLink {
-//                            MulMenuView()
-                        } label: {
+                        NavigationLink(value: Operator.div) {
                             Text("÷")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightPurple)
                         }
-                        NavigationLink {
-//                            MulMenuView()
-                        } label: {
-                            Text("−")
+                        .navigationDestination(for: Operator.self) { textValue in
+                        }
+                        
+                        NavigationLink(value: Operator.sub) {
+                            Text("-")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightIndigo)
+                        }
+                        .navigationDestination(for: Operator.self) { textValue in
                         }
                     }
                 }
@@ -60,6 +68,8 @@ struct MainView: View {
                 }
                 .padding(.bottom, 10)
             }
+            
+            
         }
     }
 }
