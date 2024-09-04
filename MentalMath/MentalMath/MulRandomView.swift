@@ -27,7 +27,7 @@ struct MulRandomView: View {
                     showLeftPicker.toggle()
                     
                 }, label: {
-                    Text(leftNumber == 0 ? "Digit" : "\(String(describing: leftNumber))")
+                    Text(leftNumber == 0 ? "Digit" : "\(String(describing: leftNumber)) digits")
                         .foregroundStyle(leftNumber == 0 ? .textField : .black)
                         .textFieldUnderbarStyle(lineColor: .black)
                         .boldTextStyle()
@@ -44,7 +44,7 @@ struct MulRandomView: View {
                     showRightPicker.toggle()
                     
                 }, label: {
-                    Text(rightNumber == 0 ? "Digit" : "\(String(describing: rightNumber))")
+                    Text(rightNumber == 0 ? "Digit" : "\(String(describing: rightNumber)) digits")
                         .foregroundStyle(rightNumber == 0 ? .textField : .black)
                         .textFieldUnderbarStyle(lineColor: .black)
                         .boldTextStyle()
@@ -74,13 +74,13 @@ struct MulRandomView: View {
 
 struct PickerView: View {
     @Binding var number: Int
-    let numberRange: [Int] = [1, 10, 100, 1000]
+    let numberRange: [Int] = [1, 2, 3, 4]
     
     var body: some View {
         VStack {
             Picker("Pick", selection: $number) {
                 ForEach(numberRange, id: \.self) { idx in
-                    Text("\(idx)")
+                    Text("\(idx) digits")
                 }
                 .cornerRadius(15)
                 .padding()

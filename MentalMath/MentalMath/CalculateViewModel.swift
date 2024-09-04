@@ -50,10 +50,10 @@ class CalculateViewModel: ObservableObject {
             rightStartNum = 1
             rightEndNum = selectedLeftNumber > 9 ? selectedLeftNumber : defaultEndNumber
         case .mulrandom:
-            leftStartNum = selectedLeftNumber
-            leftEndNum = selectedLeftNumber * 10 - 1
-            rightStartNum = selectedRightNumber
-            rightEndNum = selectedRightNumber * 10 - 1
+            leftStartNum = Int(pow(10.0, Float(selectedLeftNumber)))
+            leftEndNum = leftStartNum * 10 - 1
+            rightStartNum = Int(pow(10.0, Float(selectedRightNumber)))
+            rightEndNum = rightStartNum * 10 - 1
 
         default:
             print("Error destinations")
