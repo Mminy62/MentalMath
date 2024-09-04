@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct MulMenuView: View {
+    @EnvironmentObject var router: Router
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
         VStack(alignment: .center, spacing: 30) {
-            NavigationLink {
-                MulTableView()
-            } label: {
+            Button(action: {
+                router.navigate(to: .multable)
+            }, label: {
                 Text("Multiplication Table")
                     .font(.system(size: 20))
                     .mainButtonStyle(height: screenHeight / 9, backgroundColor: Color.lightCyan)
-            }
-            
-            NavigationLink {
-                MulRandomView()
-            } label: {
+            })
+            Button(action: {
+                router.navigate(to: .multable)
+            }, label: {
                 Text("Random Problems")
                     .font(.system(size: 20))
                     .mainButtonStyle(height: screenHeight / 9, backgroundColor: Color.lightPurple)
-            }
+            })
             Spacer()
         }
         .padding(.leading, screenWidth / 7)

@@ -10,8 +10,10 @@ import SwiftUI
 struct CalculateView: View {
     @ObservedObject var viewModel = CalculateViewModel.shared
     @FocusState var isFocused: Bool
-    let selectedNumber: Int?
-    let screenWidth = UIScreen.main.bounds.width
+    var leftNum: Int = 1
+    var rightNum: Int = 1
+    var title: String
+    private let screenWidth = UIScreen.main.bounds.width
     
     @State private var onAuto: Bool = false // Create the state.
     var body: some View {
@@ -60,11 +62,9 @@ struct CalculateView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .toolbarStyle(title: "\(selectedNumber ?? 0)th Problems", onAutoButton: true)
+        .toolbarStyle(title: title, onAutoButton: true)
         .onAppear {
-            viewModel.selectedLeftNumber = selectedNumber ?? 0
             viewModel.initNumbers()
-            print(viewModel.op)
         }
         .onDisappear {
             viewModel.userAnswer = ""
@@ -76,5 +76,5 @@ struct CalculateView: View {
 }
 
 #Preview {
-    CalculateView(selectedNumber: 14)
+    CalculateView(title: "3th Problems")
 }

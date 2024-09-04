@@ -38,7 +38,7 @@ struct MulRandomView: View {
                     PickerView(number: $selectedLeftNumber)
                 }
                 
-                Text("X")
+                Text(viewModel.op.display)
                     .boldTextStyle()
                 
                 Button(action: {
@@ -62,8 +62,8 @@ struct MulRandomView: View {
                     .commomButtonStyle(textColor: Color.nextButtonText ,backgroundColor: Color.mainPurple)
             }
             .navigationDestination(for: String.self) {_ in 
-                CalculateView(selectedNumber: nil)
-                // left, right 
+                CalculateView(title: "Random Problems")
+                // left, right
             }
                 
            

@@ -10,6 +10,7 @@ import SwiftUI
 
 class CalculateViewModel: ObservableObject {
     static let shared = CalculateViewModel()
+    
     @Published var textLineColor: Color = .black
     @Published var selectedLeftNumber: Int = 1
     @Published var selectedRightNumber: Int = 1
