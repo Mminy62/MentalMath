@@ -27,7 +27,7 @@ struct MulRandomView: View {
                     showLeftPicker.toggle()
                     
                 }, label: {
-                    Text(leftNumber == 0 ? "Digit" : "\(String(describing: leftNumber)) digits")
+                    Text(leftNumber == 0 ? "Digits" : "\(String(describing: leftNumber)) digits")
                         .foregroundStyle(leftNumber == 0 ? .textField : .black)
                         .textFieldUnderbarStyle(lineColor: .black)
                         .boldTextStyle()
@@ -35,6 +35,17 @@ struct MulRandomView: View {
                 .padding()
                 .sheet(isPresented: $showLeftPicker) {
                     PickerView(number: $leftNumber)
+                    Button {
+                        showLeftPicker.toggle()
+                    } label: {
+                        Text("Save")
+                            .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.hintBackground)
+                    }
+                    .onAppear {
+                        if showLeftPicker && leftNumber <= 1 {
+                            leftNumber = 1
+                        }
+                    }
                 }
                 
                 Text(viewModel.op.display)
@@ -44,7 +55,7 @@ struct MulRandomView: View {
                     showRightPicker.toggle()
                     
                 }, label: {
-                    Text(rightNumber == 0 ? "Digit" : "\(String(describing: rightNumber)) digits")
+                    Text(rightNumber == 0 ? "Digits" : "\(String(describing: rightNumber)) digits")
                         .foregroundStyle(rightNumber == 0 ? .textField : .black)
                         .textFieldUnderbarStyle(lineColor: .black)
                         .boldTextStyle()
@@ -52,6 +63,18 @@ struct MulRandomView: View {
                 .padding()
                 .sheet(isPresented: $showRightPicker) {
                     PickerView(number: $rightNumber)
+                    Button {
+                        showRightPicker.toggle()
+                    } label: {
+                        Text("Save")
+                            .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.hintBackground)
+                    }
+                    .opacity(rightNumber != 0 ? 1: 0.8)
+                    .onAppear {
+                        if showRightPicker && rightNumber <= 1 {
+                            rightNumber = 1
+                        }
+                    }
                 }
             }
             
