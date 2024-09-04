@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct MulRandomView: View {
+    @EnvironmentObject var router: Router
     @ObservedObject var viewModel = CalculateViewModel.shared
-    @State var selectedLeftNumber: Int = 0
-    @State var selectedRightNumber: Int = 0
+    @State var leftNumber: Int = 0
+    @State var rightNumber: Int = 0
     @State private var showLeftPicker = false
     @State private var showRightPicker = false
-    let numberRange: [Int] = [1, 10, 100, 1000]
-    @State var leftNumber: String = "Digit"
     @State var onNext: Bool = false
     
     
@@ -28,14 +27,14 @@ struct MulRandomView: View {
                     showLeftPicker.toggle()
                     
                 }, label: {
-                    Text(selectedLeftNumber == 0 ? "Digit" : "\(String(describing: selectedLeftNumber))")
-                        .foregroundStyle(.gray)
+                    Text(leftNumber == 0 ? "Digit" : "\(String(describing: leftNumber))")
+                        .foregroundStyle(leftNumber == 0 ? .textField : .black)
                         .textFieldUnderbarStyle(lineColor: .black)
                         .boldTextStyle()
                 })
                 .padding()
                 .sheet(isPresented: $showLeftPicker) {
-                    PickerView(number: $selectedLeftNumber)
+                    PickerView(number: $leftNumber)
                 }
                 
                 Text(viewModel.op.display)
@@ -45,30 +44,28 @@ struct MulRandomView: View {
                     showRightPicker.toggle()
                     
                 }, label: {
-                    Text(selectedRightNumber == 0 ? "Digit" : "\(String(describing: selectedRightNumber))")
-                        .foregroundStyle(.gray)
+                    Text(rightNumber == 0 ? "Digit" : "\(String(describing: rightNumber))")
+                        .foregroundStyle(rightNumber == 0 ? .textField : .black)
                         .textFieldUnderbarStyle(lineColor: .black)
                         .boldTextStyle()
                 })
                 .padding()
                 .sheet(isPresented: $showRightPicker) {
-                    PickerView(number: $selectedRightNumber)
+                    PickerView(number: $rightNumber)
                 }
             }
             
-                
-            NavigationLink(value: "") {
+            Button(action: {
+                viewModel.selectedLeftNumber = leftNumber
+                viewModel.selectedRightNumber = rightNumber
+                viewModel.destination = .mulrandom
+                router.navigate(to: .calculate("Random Problems"))
+            }, label: {
                 Text("Next")
-                    .commomButtonStyle(textColor: Color.nextButtonText ,backgroundColor: Color.mainPurple)
-            }
-            .navigationDestination(for: String.self) {_ in 
-                CalculateView(title: "Random Problems")
-                // left, right
-            }
-                
-           
-            
-
+                    .commomButtonStyle(textColor: Color.nextButtonText, backgroundColor: Color.mainPurple)
+            })
+            .opacity(leftNumber != 0 && rightNumber != 0 ? 1 : 0.7)
+            .disabled(leftNumber == 0 || rightNumber == 0)
         }
         .toolbarStyle(title: "Random", onAutoButton: false)
         

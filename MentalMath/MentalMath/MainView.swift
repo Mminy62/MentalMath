@@ -36,7 +36,7 @@ struct MainView: View {
 //                        router.navigate(to: .)
                     }, label: {
                         Text("+")
-                            .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightCyan)
+                            .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.hintBackground)
                     })
                 }
                 
@@ -53,7 +53,7 @@ struct MainView: View {
                         viewModel.op = Operator.sub
 //                        router.navigate(to: .)
                     }, label: {
-                        Text("-")
+                        Text("−")
                             .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightIndigo)
                     })
                 }

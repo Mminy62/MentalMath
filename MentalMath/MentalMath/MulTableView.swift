@@ -19,6 +19,7 @@ struct MulTableView: View {
                 ForEach(Array(startRange...endRange), id: \.self) { num in
                     Button(action: {
                         viewModel.selectedLeftNumber = num
+                        viewModel.destination = .multable
                         router.navigate(to: .calculate("\(num)th Problems"))
                     }, label: {
                         Text("\(num)")

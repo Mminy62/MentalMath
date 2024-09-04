@@ -20,6 +20,7 @@ class CalculateViewModel: ObservableObject {
     @Published var isCorrect: Bool = false
     @Published var problem: String = ""
     @Published var answer: String = "1"
+    @Published var destination: Destination = .multable
     @Published var userAnswer: String = "" {
         didSet {
             if oldValue != userAnswer {
@@ -27,7 +28,6 @@ class CalculateViewModel: ObservableObject {
             }
         }
     }
-    @Published var onRandomMode: Bool = false
     @Published var onAutoMode = false {
         didSet {
             checkAnswer()
@@ -43,17 +43,39 @@ class CalculateViewModel: ObservableObject {
 
     // MARK: initNumbers - 화면 초기에 숫자 세팅 함수
     func initNumbers() {
-        leftStartNum = selectedLeftNumber
-        leftEndNum = selectedLeftNumber
-        rightStartNum = 1
-        rightEndNum = selectedLeftNumber > 9 ? selectedLeftNumber : defaultEndNumber
+        switch destination {
+        case .multable:
+            leftStartNum = selectedLeftNumber
+            leftEndNum = selectedLeftNumber
+            rightStartNum = 1
+            rightEndNum = selectedLeftNumber > 9 ? selectedLeftNumber : defaultEndNumber
+        case .mulrandom:
+            leftStartNum = selectedLeftNumber
+            leftEndNum = selectedLeftNumber * 10 - 1
+            rightStartNum = selectedRightNumber
+            rightEndNum = selectedRightNumber * 10 - 1
+
+        default:
+            print("Error destinations")
+        }
+        
         setNextProblem()
     }
     
     // MARK: setNextProblem - 다음 문제 생성 함수
     func setNextProblem() {
-        leftNumber = createNumber(oldValue: nil, start: leftStartNum, end: leftEndNum)
-        rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
+        switch destination {
+        case .multable:
+            leftNumber = createNumber(oldValue: nil, start: leftStartNum, end: leftEndNum)
+            rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
+        case .mulrandom:
+            leftNumber = createNumber(oldValue: leftNumber, start: leftStartNum, end: leftEndNum)
+            rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
+
+        default:
+            print("Error destinations")
+        }
+        
         createProblem()
     }
     
@@ -67,7 +89,7 @@ class CalculateViewModel: ObservableObject {
         if let result = expression.expressionValue(with: nil, context: nil) as? NSNumber
         {
             answer = result.stringValue
-//            print("Result:", result)
+            print("Result:", result)
         }
     }
     

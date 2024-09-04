@@ -22,7 +22,7 @@ struct MulMenuView: View {
                     .mainButtonStyle(height: screenHeight / 9, backgroundColor: Color.hintBackground)
             })
             Button(action: {
-                router.navigate(to: .multable)
+                router.navigate(to: .mulrandom)
             }, label: {
                 Text("Random Problems")
                     .font(.system(size: 20))
