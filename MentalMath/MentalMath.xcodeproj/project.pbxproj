@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21F88F72C86147700715569 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21F88F62C86147700715569 /* Operator.swift */; };
 		D2F3394D2C7F916800B47570 /* MentalMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394C2C7F916800B47570 /* MentalMath.swift */; };
 		D2F3394F2C7F916800B47570 /* MulMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394E2C7F916800B47570 /* MulMenuView.swift */; };
 		D2F339512C7F916A00B47570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339502C7F916A00B47570 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D21F88F62C86147700715569 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		D2F339492C7F916800B47570 /* MentalMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F3394C2C7F916800B47570 /* MentalMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalMath.swift; sourceTree = "<group>"; };
 		D2F3394E2C7F916800B47570 /* MulMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulMenuView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
 				D2F339602C7F993E00B47570 /* CalculateViewModel.swift */,
 				D2F3396E2C8553D100B47570 /* MulRandomView.swift */,
+				D21F88F62C86147700715569 /* Operator.swift */,
 				D2F3396D2C85515B00B47570 /* Styles */,
 				D2F3396B2C844FDE00B47570 /* Extensions */,
 				D2F339502C7F916A00B47570 /* Assets.xcassets */,
@@ -194,6 +197,7 @@
 				D2F339652C808E1400B47570 /* ViewExtension.swift in Sources */,
 				D2F339712C85556600B47570 /* MainView.swift in Sources */,
 				D2F3394D2C7F916800B47570 /* MentalMath.swift in Sources */,
+				D21F88F72C86147700715569 /* Operator.swift in Sources */,
 				D2F3395F2C7F94FA00B47570 /* CalculateView.swift in Sources */,
 				D2F339732C8563D900B47570 /* ToolbarModifier.swift in Sources */,
 				D2F339632C80693300B47570 /* ViewModifiers.swift in Sources */,

@@ -27,18 +27,10 @@ struct MainView: View {
                             Text("×")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightSkyBlue)
                         }
-                        .navigationDestination(for: Operator.self) { textValue in
-                            MulMenuView()
-                                .onAppear {
-                                    viewModel.op = textValue
-                                }
-                        }
-                
+                        
                         NavigationLink(value: Operator.add) {
                             Text("+")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightCyan)
-                        }
-                        .navigationDestination(for: Operator.self) { textValue in
                         }
                     }
                     
@@ -47,15 +39,13 @@ struct MainView: View {
                             Text("÷")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightPurple)
                         }
-                        .navigationDestination(for: Operator.self) { textValue in
-                        }
+                        
                         
                         NavigationLink(value: Operator.sub) {
                             Text("-")
                                 .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightIndigo)
                         }
-                        .navigationDestination(for: Operator.self) { textValue in
-                        }
+                        
                     }
                 }
                 .padding(.leading, screenWidth / 7)
@@ -67,6 +57,23 @@ struct MainView: View {
                         .bold()
                 }
                 .padding(.bottom, 10)
+            }
+            
+            .navigationDestination(for: Operator.self) { op in
+                switch op {
+                case .mul:
+                    MulMenuView()
+                        .onAppear {
+                            viewModel.op = op
+                        }
+                case .add:
+                    Text("add")
+                // 다른 케이스도 추가 가능
+                case .div:
+                    Text("div")
+                case .sub:
+                    Text("sub")
+                }
             }
             
             

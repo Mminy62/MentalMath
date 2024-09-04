@@ -10,7 +10,7 @@ import SwiftUI
 struct CalculateView: View {
     @ObservedObject var viewModel = CalculateViewModel.shared
     @FocusState var isFocused: Bool
-    let selectedNumber: Int
+    let selectedNumber: Int?
     let screenWidth = UIScreen.main.bounds.width
     
     @State private var onAuto: Bool = false // Create the state.
@@ -20,7 +20,7 @@ struct CalculateView: View {
             VStack(alignment: .center, spacing: 30){
                 HStack(alignment: .center) {
                     Spacer()
-                    Text("\(viewModel.leftNumber) X \(viewModel.rightNumber) = ")
+                    Text(viewModel.problem)
                         .boldTextStyle()
                         .foregroundStyle(.primary)
                     
@@ -47,7 +47,7 @@ struct CalculateView: View {
                     .frame(width: screenWidth/5, height: 35)
                     
                     Button(action: {
-                        viewModel.settingNextProblem()
+                        viewModel.setNextProblem()
                     }, label: {
                         Text("Next")
                             .commomButtonStyle(textColor: Color.nextButtonText ,backgroundColor: Color.mainPurple)
@@ -60,10 +60,11 @@ struct CalculateView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .toolbarStyle(title: "\(selectedNumber)th Problems", onAutoButton: true)
+        .toolbarStyle(title: "\(selectedNumber ?? 0)th Problems", onAutoButton: true)
         .onAppear {
-            viewModel.selectedNumber = selectedNumber
-            viewModel.settingNumbers()
+            viewModel.selectedLeftNumber = selectedNumber ?? 0
+            viewModel.initNumbers()
+            print(viewModel.op)
         }
         .onDisappear {
             viewModel.userAnswer = ""
