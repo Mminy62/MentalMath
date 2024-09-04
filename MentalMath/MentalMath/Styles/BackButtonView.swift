@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct BackButtonView: View {
+    @EnvironmentObject var router: Router
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body : some View {
         Button{
-            self.presentationMode.wrappedValue.dismiss()
+            router.navigateBack()
         } label: {
             HStack {
                 Image(systemName: "chevron.left")
