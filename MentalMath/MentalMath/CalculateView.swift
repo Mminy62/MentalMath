@@ -44,7 +44,7 @@ struct CalculateView: View {
                         viewModel.userAnswer = viewModel.answer
                     }, label: {
                         Text("Hint")
-                            .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.mainCyan)
+                            .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.hintBackground)
                     })
                     .frame(width: screenWidth/5, height: 35)
                     

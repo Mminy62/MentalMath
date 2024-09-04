@@ -19,7 +19,7 @@ struct MulMenuView: View {
             }, label: {
                 Text("Multiplication Table")
                     .font(.system(size: 20))
-                    .mainButtonStyle(height: screenHeight / 9, backgroundColor: Color.lightCyan)
+                    .mainButtonStyle(height: screenHeight / 9, backgroundColor: Color.hintBackground)
             })
             Button(action: {
                 router.navigate(to: .multable)
