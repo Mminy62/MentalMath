@@ -22,7 +22,7 @@ struct MentalMath: App {
                         case .multable:
                             MulTableView()
                         case .mulrandom:
-                            MulRandomView()
+                            RandomView()
                         case .calculate(let title):
                             CalculateView(title: title)
                         }

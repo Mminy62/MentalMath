@@ -20,7 +20,7 @@
 		D2F339652C808E1400B47570 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339642C808E1400B47570 /* ViewExtension.swift */; };
 		D2F339672C8163B800B47570 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339662C8163B800B47570 /* BackButtonView.swift */; };
 		D2F3396A2C844FD200B47570 /* ControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339692C844FD200B47570 /* ControllerExtension.swift */; };
-		D2F3396F2C8553D100B47570 /* MulRandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3396E2C8553D100B47570 /* MulRandomView.swift */; };
+		D2F3396F2C8553D100B47570 /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3396E2C8553D100B47570 /* RandomView.swift */; };
 		D2F339712C85556600B47570 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339702C85556600B47570 /* MainView.swift */; };
 		D2F339732C8563D900B47570 /* ToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F339722C8563D900B47570 /* ToolbarModifier.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +41,7 @@
 		D2F339662C8163B800B47570 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		D2F339692C844FD200B47570 /* ControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerExtension.swift; sourceTree = "<group>"; };
 		D2F3396C2C84D8BE00B47570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D2F3396E2C8553D100B47570 /* MulRandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulRandomView.swift; sourceTree = "<group>"; };
+		D2F3396E2C8553D100B47570 /* RandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomView.swift; sourceTree = "<group>"; };
 		D2F339702C85556600B47570 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D2F339722C8563D900B47570 /* ToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +83,7 @@
 				D2F3395C2C7F928500B47570 /* MulTableView.swift */,
 				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
 				D2F339602C7F993E00B47570 /* CalculateViewModel.swift */,
-				D2F3396E2C8553D100B47570 /* MulRandomView.swift */,
+				D2F3396E2C8553D100B47570 /* RandomView.swift */,
 				D21F88F62C86147700715569 /* Operator.swift */,
 				D21F88F82C8854D500715569 /* Destination.swift */,
 				D2F3396D2C85515B00B47570 /* Styles */,
@@ -194,7 +194,7 @@
 				D2F3395D2C7F928500B47570 /* MulTableView.swift in Sources */,
 				D2F339612C7F993E00B47570 /* CalculateViewModel.swift in Sources */,
 				D2F3394F2C7F916800B47570 /* MulMenuView.swift in Sources */,
-				D2F3396F2C8553D100B47570 /* MulRandomView.swift in Sources */,
+				D2F3396F2C8553D100B47570 /* RandomView.swift in Sources */,
 				D2F339672C8163B800B47570 /* BackButtonView.swift in Sources */,
 				D2F3396A2C844FD200B47570 /* ControllerExtension.swift in Sources */,
 				D21F88F92C8854D500715569 /* Destination.swift in Sources */,

@@ -25,4 +25,17 @@ enum Operator: String {
             return "-"
         }
     }
+    
+    var title: String {
+        switch self {
+        case .mul:
+            return "Multiplication"
+        case .add:
+            return "Addition"
+        case .div:
+            return "Division"
+        case .sub:
+            return "Subtraction"
+        }
+    }
 }

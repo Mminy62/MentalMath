@@ -1,5 +1,5 @@
 //
-//  MulRandomView.swift
+//  RandomView.swift
 //  MentalMath
 //
 //  Created by 이민영 on 9/2/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MulRandomView: View {
+struct RandomView: View {
     @EnvironmentObject var router: Router
     @ObservedObject var viewModel = CalculateViewModel.shared
     @State var leftNumber: Int = 0
@@ -89,7 +89,7 @@ struct MulRandomView: View {
             .opacity(leftNumber != 0 && rightNumber != 0 ? 1 : 0.7)
             .disabled(leftNumber == 0 || rightNumber == 0)
         }
-        .toolbarStyle(title: "Random", onAutoButton: false)
+        .toolbarStyle(title: "Random \(viewModel.op.title)", onAutoButton: false)
         
     }
 }
@@ -114,5 +114,5 @@ struct PickerView: View {
 }
 
 #Preview {
-    MulRandomView()
+    RandomView()
 }
