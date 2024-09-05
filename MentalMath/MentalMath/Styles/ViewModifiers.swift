@@ -11,6 +11,7 @@ import SwiftUI
 struct CommonButtonStyle: ViewModifier {
     var textColor: Color
     var backgroundColor: Color
+    private let screenWidth = UIScreen.main.bounds.width
     
     func body(content: Content) -> some View {
         content
@@ -21,7 +22,7 @@ struct CommonButtonStyle: ViewModifier {
             .background(
                 RoundedRectangle(cornerRadius: 20.0)
                     .foregroundColor(backgroundColor)
-                    .frame(width: 100, height: 35)
+                    .frame(width: screenWidth/4, height: 35)
             )
     }
 }

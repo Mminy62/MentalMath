@@ -34,19 +34,21 @@ struct CalculateView: View {
                         .keyboardType(.numberPad)
                         .focused($isFocused)
                         .padding(.bottom, 5)
-                        .frame(maxWidth: 130)
+//                        .frame(width: screenWidth/4)
                     Spacer()
                 }
+                .frame(width: screenWidth * 0.6)
                 
-                HStack(alignment: .center, spacing: 60) {
-                    Spacer(minLength: 100)
+                HStack(alignment: .center) {
                     Button(action: {
                         viewModel.userAnswer = viewModel.answer
                     }, label: {
                         Text("Hint")
                             .commomButtonStyle(textColor: Color.hintButtonText,backgroundColor: Color.hintBackground)
                     })
-                    .frame(width: screenWidth/5, height: 35)
+                    .frame(width: screenWidth/4, height: 35)
+                    
+                    Spacer()
                     
                     Button(action: {
                         viewModel.setNextProblem()
@@ -55,11 +57,11 @@ struct CalculateView: View {
                             .commomButtonStyle(textColor: Color.nextButtonText ,backgroundColor: Color.mainPurple)
                             .opacity(viewModel.onAutoMode ? 0 : 1)
                     })
-                    .frame(width: screenWidth/5, height: 35)
-                    Spacer(minLength: 100)
+                    .frame(width:screenWidth/4, height: 35)
                 }
-                
+                .frame(width: screenWidth * 0.6)
             }
+            .frame(width: screenWidth * 0.6)
         }
         .navigationBarBackButtonHidden(true)
         .toolbarStyle(title: title, onAutoButton: true)
