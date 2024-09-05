@@ -79,6 +79,7 @@ class CalculateViewModel: ObservableObject {
             createProblem()
         
         case .div:
+            print("div:", leftNumber, rightNumber)
             if leftNumber < rightNumber {
                 swap(&leftNumber, &rightNumber)
             }
@@ -90,24 +91,25 @@ class CalculateViewModel: ObservableObject {
     func setDivProblem() {
         var tempAnswer = 0
         while true {
-            let temp1 = createNumber(oldValue: leftNumber, start: leftStartNum, end: leftEndNum)
-            let temp2 = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
-            if temp1 > temp2 {
-                leftNumber = temp1
-                rightNumber = temp2
-            }
-            let originDigits = String(leftNumber).count // originDigits
+            let temp1 = createNumber(oldValue: nil, start: leftStartNum, end: leftEndNum)
+            let temp2 = createNumber(oldValue: nil, start: rightStartNum, end: rightEndNum)
+            let maxValue = max(temp1, temp2)
+            let minValue = min(temp1, temp2)
+            
+            if leftNumber == maxValue { continue }
+            leftNumber = maxValue
+            rightNumber = minValue
+
+            let originDigits = String(leftNumber).count
             tempAnswer = leftNumber / rightNumber
             leftNumber = rightNumber * tempAnswer
-            
+        
             // 검산
-            var resultDigit = String(leftNumber).count
-            
+            let resultDigit = String(leftNumber).count
             if resultDigit < originDigits {
                 tempAnswer += 1
                 leftNumber = tempAnswer * rightNumber
             }
-            
             if resultDigit == originDigits {
                 break
             }
