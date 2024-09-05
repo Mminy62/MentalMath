@@ -33,7 +33,7 @@ struct MainView: View {
                     
                     Button(action: {
                         viewModel.op = Operator.add
-//                        router.navigate(to: .)
+                        router.navigate(to: .mulrandom)
                     }, label: {
                         Text("+")
                             .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.hintBackground)
@@ -43,7 +43,7 @@ struct MainView: View {
                 HStack(alignment: .center, spacing: 20) {
                     Button(action: {
                         viewModel.op = Operator.div
-//                        router.navigate(to: .)
+                        router.navigate(to: .mulrandom)
                     }, label: {
                         Text("÷")
                             .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightPurple)
@@ -51,7 +51,7 @@ struct MainView: View {
                     
                     Button(action: {
                         viewModel.op = Operator.sub
-//                        router.navigate(to: .)
+                        router.navigate(to: .mulrandom)
                     }, label: {
                         Text("−")
                             .mainButtonStyle(height: screenHeight / 6, backgroundColor: Color.lightIndigo)

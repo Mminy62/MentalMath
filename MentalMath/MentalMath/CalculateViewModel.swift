@@ -43,20 +43,23 @@ class CalculateViewModel: ObservableObject {
 
     // MARK: initNumbers - 화면 초기에 숫자 세팅 함수
     func initNumbers() {
-        switch destination {
-        case .multable:
+        if op == .div && selectedLeftNumber < selectedRightNumber {
+            swap(&selectedLeftNumber, &selectedRightNumber)
+            leftStartNum = Int(pow(10.0, Float(selectedLeftNumber - 1)))
+            leftEndNum = leftStartNum * 10 - 1
+            rightStartNum = Int(pow(10.0, Float(selectedRightNumber - 1)))
+            rightEndNum = rightStartNum * 10 - 1
+        }
+        else if destination == .multable {
             leftStartNum = selectedLeftNumber
             leftEndNum = selectedLeftNumber
             rightStartNum = 1
             rightEndNum = selectedLeftNumber > 9 ? selectedLeftNumber : defaultEndNumber
-        case .mulrandom:
-            leftStartNum = Int(pow(10.0, Float(selectedLeftNumber)))
+        } else {
+            leftStartNum = Int(pow(10.0, Float(selectedLeftNumber - 1)))
             leftEndNum = leftStartNum * 10 - 1
-            rightStartNum = Int(pow(10.0, Float(selectedRightNumber)))
+            rightStartNum = Int(pow(10.0, Float(selectedRightNumber - 1)))
             rightEndNum = rightStartNum * 10 - 1
-
-        default:
-            print("Error destinations")
         }
         
         setNextProblem()
@@ -64,26 +67,66 @@ class CalculateViewModel: ObservableObject {
     
     // MARK: setNextProblem - 다음 문제 생성 함수
     func setNextProblem() {
-        switch destination {
-        case .multable:
-            leftNumber = createNumber(oldValue: nil, start: leftStartNum, end: leftEndNum)
-            rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
-        case .mulrandom:
-            leftNumber = createNumber(oldValue: leftNumber, start: leftStartNum, end: leftEndNum)
-            rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
-
-        default:
-            print("Error destinations")
-        }
+        switch op {
+        case .add, .mul, .sub:
+            if destination == .multable {
+                leftNumber = createNumber(oldValue: nil, start: leftStartNum, end: leftEndNum)
+                rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
+            } else {
+                leftNumber = createNumber(oldValue: leftNumber, start: leftStartNum, end: leftEndNum)
+                rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
+            }
+            createProblem()
         
+        case .div:
+            if leftNumber < rightNumber {
+                swap(&leftNumber, &rightNumber)
+            }
+            setDivProblem()
+        }
+    }
+
+    // MARK: setDivProblem - div 연산자의 다음 문제 생성 함수
+    func setDivProblem() {
+        var tempAnswer = 0
+        while true {
+            let temp1 = createNumber(oldValue: leftNumber, start: leftStartNum, end: leftEndNum)
+            let temp2 = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
+            if temp1 > temp2 {
+                leftNumber = temp1
+                rightNumber = temp2
+            }
+            let originDigits = String(leftNumber).count // originDigits
+            tempAnswer = leftNumber / rightNumber
+            leftNumber = rightNumber * tempAnswer
+            
+            // 검산
+            var resultDigit = String(leftNumber).count
+            
+            if resultDigit < originDigits {
+                tempAnswer += 1
+                leftNumber = tempAnswer * rightNumber
+            }
+            
+            if resultDigit == originDigits {
+                break
+            }
+        }
+        answer = String(tempAnswer)
         createProblem()
     }
     
     // MARK: createProblem - 문제, 답안 문자열 생성 함수
     func createProblem() {
         if !userAnswer.isEmpty { userAnswer = "" }
-        problem = "\(leftNumber) \(op.display) \(rightNumber) = "
         
+        if op == .div {
+            problem = "\(leftNumber) \(op.display) \(rightNumber) = "
+            print("Result div:", answer)
+            return
+        }
+    
+        problem = "\(leftNumber) \(op.display) \(rightNumber) = "
         let NSProblem = "\(leftNumber)\(op.rawValue)\(rightNumber)"
         let expression = NSExpression(format: NSProblem)
         if let result = expression.expressionValue(with: nil, context: nil) as? NSNumber
@@ -131,6 +174,4 @@ class CalculateViewModel: ObservableObject {
             }
         }
     }
-    
-
 }

@@ -10,7 +10,7 @@ import Foundation
 enum Operator: String {
     case mul = "*"
     case add = "+"
-    case div = "/"
+    case div = "÷"
     case sub = "-"
     
     var display: String {

@@ -16,7 +16,6 @@ struct MulRandomView: View {
     @State private var showRightPicker = false
     @State var onNext: Bool = false
     
-    
     var body: some View {
         VStack(alignment: .center, spacing: 40) {
             Text("Set the number of digits")
