@@ -15,7 +15,7 @@ struct CalculateView: View {
     var title: String
     private let screenWidth = UIScreen.main.bounds.width
     
-    @State private var onAuto: Bool = false // Create the state.
+    @State private var onAuto: Bool = false
     var body: some View {
         ZStack {
             Color(.white).ignoresSafeArea()
@@ -34,7 +34,6 @@ struct CalculateView: View {
                         .keyboardType(.numberPad)
                         .focused($isFocused)
                         .padding(.bottom, 5)
-//                        .frame(width: screenWidth/4)
                     Spacer()
                 }
                 .frame(width: screenWidth * 0.6)

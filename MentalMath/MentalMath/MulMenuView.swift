@@ -38,7 +38,6 @@ struct MulMenuView: View {
         .padding(.top, screenHeight / 8)
         .toolbarStyle(title: "Multiplication", onAutoButton: false)
     }
-    
 }
 
 #Preview {
