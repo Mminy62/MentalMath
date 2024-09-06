@@ -23,20 +23,21 @@ struct CalculateView: View {
                 HStack(alignment: .center) {
                     Spacer()
                     Text(viewModel.problem)
+                        .frame(maxWidth: .infinity)
                         .boldTextStyle()
                         .foregroundStyle(.primary)
                     
                     TextField("정답란", text: $viewModel.userAnswer, prompt: Text("Answer").foregroundColor(Color.textField))
                         .boldTextStyle()
                         .textFieldUnderbarStyle(lineColor: viewModel.textLineColor)
-                    
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
                         .focused($isFocused)
                         .padding(.bottom, 5)
+
                     Spacer()
                 }
-                .frame(width: screenWidth * 0.6)
+                .fixedSize()
                 
                 HStack(alignment: .center) {
                     Button(action: {
@@ -60,7 +61,7 @@ struct CalculateView: View {
                 }
                 .frame(width: screenWidth * 0.6)
             }
-            .frame(width: screenWidth * 0.6)
+            .frame(maxWidth: .infinity)
         }
         .navigationBarBackButtonHidden(true)
         .toolbarStyle(title: title, onAutoButton: true)
