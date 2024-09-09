@@ -39,7 +39,7 @@ class CalculateViewModel: ObservableObject {
     private var rightStartNum: Int = 1
     private var rightEndNum: Int = 1
     private let defaultEndNumber: Int = 9
-    private let autoDelay: TimeInterval = 1.0
+    private let autoDelay: TimeInterval = 0.5
 
     // MARK: initNumbers - 화면 초기에 숫자 세팅 함수
     func initNumbers() {
@@ -171,7 +171,7 @@ class CalculateViewModel: ObservableObject {
         }
         
         if onAutoMode && isCorrect {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + autoDelay) {
                 self.setNextProblem()
             }
         }
