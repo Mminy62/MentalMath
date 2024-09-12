@@ -7,7 +7,12 @@
 - 곱셈 메뉴에는 특정 단수 연습 가능 (2 ~ 20단 제공)
 
 ### 배포 링크
-[[앱스토어] Mental Math - 암산 연습](https://apps.apple.com/kr/app/mental-math-%EC%95%94%EC%82%B0-%EC%97%B0%EC%8A%B5/id6670271755)
+[앱스토어] Mental Math - 암산 연습
+
+ <a href="https://apps.apple.com/us/app/mental-math-%EC%95%94%EC%82%B0-%EC%97%B0%EC%8A%B5/id6670271755?itscg=30200&itsct=apps_box_badge&mttnsubad=6670271755" style="display: inline-block;">
+ <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1725494400" alt="Download on the App Store" style="width: 200px; height: 50px; vertical-align: middle; object-fit: contain;" />
+ </a>
+    
 
 ## 목차
 1. [앱 화면 소개](#앱-화면-소개)   
