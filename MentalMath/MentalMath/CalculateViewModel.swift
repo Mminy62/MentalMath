@@ -76,8 +76,12 @@ class CalculateViewModel: ObservableObject {
                 leftNumber = createNumber(oldValue: leftNumber, start: leftStartNum, end: leftEndNum)
                 rightNumber = createNumber(oldValue: rightNumber, start: rightStartNum, end: rightEndNum)
             }
+            if op == .sub {
+                if leftNumber < rightNumber { swap(&leftNumber, &rightNumber) }
+            }
+            
             createProblem()
-        
+            
         case .div:
             print("div:", leftNumber, rightNumber)
             if leftNumber < rightNumber {
