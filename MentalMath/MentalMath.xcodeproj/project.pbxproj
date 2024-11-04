@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D21F88F72C86147700715569 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21F88F62C86147700715569 /* Operator.swift */; };
 		D21F88F92C8854D500715569 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21F88F82C8854D500715569 /* Destination.swift */; };
+		D2B5141D2CD7D44D00076143 /* CalculateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5141C2CD7D44D00076143 /* CalculateData.swift */; };
 		D2F3394D2C7F916800B47570 /* MentalMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394C2C7F916800B47570 /* MentalMath.swift */; };
 		D2F3394F2C7F916800B47570 /* MulMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3394E2C7F916800B47570 /* MulMenuView.swift */; };
 		D2F339512C7F916A00B47570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F339502C7F916A00B47570 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		D21F88F62C86147700715569 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		D21F88F82C8854D500715569 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		D2B5141C2CD7D44D00076143 /* CalculateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateData.swift; sourceTree = "<group>"; };
 		D2F339492C7F916800B47570 /* MentalMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F3394C2C7F916800B47570 /* MentalMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalMath.swift; sourceTree = "<group>"; };
 		D2F3394E2C7F916800B47570 /* MulMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulMenuView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2B5141B2CD758B200076143 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2F339702C85556600B47570 /* MainView.swift */,
+				D2F3394E2C7F916800B47570 /* MulMenuView.swift */,
+				D2F3395C2C7F928500B47570 /* MulTableView.swift */,
+				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
+				D2F3396E2C8553D100B47570 /* RandomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D2F339402C7F916800B47570 = {
 			isa = PBXGroup;
 			children = (
@@ -78,12 +92,9 @@
 			children = (
 				D2F3396C2C84D8BE00B47570 /* Info.plist */,
 				D2F3394C2C7F916800B47570 /* MentalMath.swift */,
-				D2F339702C85556600B47570 /* MainView.swift */,
-				D2F3394E2C7F916800B47570 /* MulMenuView.swift */,
-				D2F3395C2C7F928500B47570 /* MulTableView.swift */,
-				D2F3395E2C7F94FA00B47570 /* CalculateView.swift */,
+				D2B5141B2CD758B200076143 /* Views */,
 				D2F339602C7F993E00B47570 /* CalculateViewModel.swift */,
-				D2F3396E2C8553D100B47570 /* RandomView.swift */,
+				D2B5141C2CD7D44D00076143 /* CalculateData.swift */,
 				D21F88F62C86147700715569 /* Operator.swift */,
 				D21F88F82C8854D500715569 /* Destination.swift */,
 				D2F3396D2C85515B00B47570 /* Styles */,
@@ -197,6 +208,7 @@
 				D2F3396F2C8553D100B47570 /* RandomView.swift in Sources */,
 				D2F339672C8163B800B47570 /* BackButtonView.swift in Sources */,
 				D2F3396A2C844FD200B47570 /* ControllerExtension.swift in Sources */,
+				D2B5141D2CD7D44D00076143 /* CalculateData.swift in Sources */,
 				D21F88F92C8854D500715569 /* Destination.swift in Sources */,
 				D2F339652C808E1400B47570 /* ViewExtension.swift in Sources */,
 				D2F339712C85556600B47570 /* MainView.swift in Sources */,
@@ -337,7 +349,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MentalMath/Preview Content\"";
 				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
@@ -356,7 +368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mminy62.MentalMath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -377,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MentalMath/Preview Content\"";
 				DEVELOPMENT_TEAM = 8383VR3NFP;
 				ENABLE_PREVIEWS = YES;
@@ -396,7 +408,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mminy62.MentalMath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
